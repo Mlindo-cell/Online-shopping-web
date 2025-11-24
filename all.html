@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="allApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3cc2740288.js" crossorigin="anonymous"></script>
+    <script src="./app/lib/angular.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/all.css">
+    <title>eProject Work</title>
+</head>
+<body ng-controller="allController">
+    <div class="container">
+        <p class="h-text">
+            While our stores are currently open and we ensure that
+            we abide by all safety regulations, you can still
+            enjoy a shopping experience at home on our online
+            store.
+        </p>
+        <header>
+                <div class="h-div">
+                    <img src="./images/logo/logo2.png" alt="logo" class="logo">
+                    <div class="numbers">
+                        <p>Customer Care</p>
+                        <p class="t1">+268 766 35 980</p>
+                    </div>
+                </div>
+        </header>
+        <br>
+
+        <nav>
+            <ul class="ul">
+                <li class="li"><a href="./index.html" class="a">Home</a></li>
+                <li class="li"><a href="#" class="a"  style="text-decoration: underline;">Shop</a> </li>
+                <li class="li"><a href="./about.html" class="a">About us</a></li>
+                <li class="li"><a href="./contact.html" class="a">Contact us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="a-n">
+                <h2>Find The Perfect Furniture Brand Just For you</h2>
+                <div class="a-n-c">
+                    <a href="#Hay"><img src="./images/bedroom.png" alt="Hay icon" ng-click="filt='office'"></a>
+                    <a href="#Vitra"><img src="./images/dining.png" alt="Vitra icon" ng-click="filt='dining'"></a>
+                    <a href="#Thonet"><img src="./images/living.png" alt="Thonet icon" ng-click="filt='living'"></a>
+                    <a href="#Knoll"><img src="./images/office.png" alt="Knoll icon" ng-click="filt='bedroom'"></a>
+                </div>
+            </div>
+
+            <div class="a-n-1">
+                <ul>
+                    <li ng-repeat="item in allItems | filter: category = filt">
+                        <a href="{{item.link}}">
+                            <img ng-src="{{item.thumb}}">
+                            <p class="name">{{item.name}}</p>
+                            <p>{{item.price | currency: 'E '}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+        <br>
+        <footer>
+            <div class="footer1">
+                <div class="footer1-c1">
+                    <h1>Sponsors</h1>
+                </div>
+                <div class="footer1-c">
+                    <a href="https://hay.dk/it" target="_blank"><img src="./images/brands/hayLogo.png" alt="Hay Logo" class="brandLogo"></a>
+                    <a href="https://www.thonet.de/en" target="_blank"><img src="./images/brands/thonet-logo.jpg" alt="Thonet Logo" class="brandLogo"></a>
+                    <a href="https://www.knoll.com/" target="_blank"><img src="./images/brands/knolllo.jpg" alt="Knoll Logo" class="brandLogo"></a>
+                    <a href="https://www.vitra.com/en-lp/home" target="_blank"><img src="./images/brands/vitraLogo.png" alt="Vitra logo" class="brandLogo"></a>
+                </div>
+            </div>
+            <div class="footer-distributed">
+
+			    <div class="footer-right">
+			    	<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+			    	<a href="https://www.twitter.com/share" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+			    	<a href="https://www.instagram.com/" target="_blank" title="Share on Instagram"><i class="fa fa-instagram"></i></a>
+			    </div>
+
+			    <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="./index.html">Home</a>
+                        <a href="#" style="text-decoration: underline;">Shop</a>
+                        <a href="./about.html">About</a>
+                        <a href="./faq.html">Faq</a>
+                        <a href="./contact.html">Contact</a>
+                    </p>
+                    <p>Durable Furnitures &copy; 2022</p>
+                </div>
+
+		    </div>
+        </footer>
+    </div>
+
+    <script src="./app/all.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3cc2740288.js" crossorigin="anonymous"></script>
+    <script src="./app/lib/angular.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>eProject Work</title>
+</head>
+<body ng-controller="myController">
+    <div class="container">
+        <p class="h-text">
+            While our stores are currently open and we ensure that
+            we abide by all safety regulations, you can still
+            enjoy a shopping experience at home on our online
+            store.
+        </p>
+        <header>
+                <div class="h-div">
+                    <img src="./images/logo/logo2.png" alt="logo" class="logo">
+                    <div class="search-bar">
+                        <input type="text" ng-model="search" id="search" placeholder="Filter Search Here">
+                        <i class="fa fa-filter" style='color:#838277'></i>
+                    </div>
+                    <div class="numbers">
+                        <p>Customer Care</p>
+                        <p class="t1">+268 766 35 980</p>
+                    </div>
+                </div>
+        </header>
+        <br>
+
+        <nav>
+            <ul class="ul">
+                <li class="li"><a href="#" class="a" style="text-decoration: underline;">Home</a></li>
+                <li class="li"><a href="./all.html" class="a">Shop</a> </li>
+                <li class="li"><a href="./about.html" class="a">About us</a></li>
+                <li class="li"><a href="./contact.html" class="a">Contact us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="m-div">
+                <div class="slider">
+                    <div class="slides">
+
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+
+                        <div class="slide first">
+                            <img src="./images/Banner/banner1.jpg" alt="banner">
+                        </div>
+                        <div class="slide">
+                            <img src="./images/Banner/banner2.jpg" alt="banner">
+                        </div>
+                        <div class="slide">
+                            <img src="./images/Banner/banner3.jpg" alt="banner">
+                        </div>
+                        <div class="slide">
+                            <img src="./images/Banner/banner4.jpg" alt="banner">
+                        </div>
+
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></labe>
+                    </div>
+                </div>
+                <br><br>
+                <div class="item-1">
+                    <h3 style="text-align:center;">BEST SELLER</h3>
+                    <br>
+                    <ul>
+                        <li ng-repeat="item in items | filter: search" class="li-item">
+                            <a href="{{item.link}}">
+                                <img ng-src="{{item.thumb}}">
+                                <p class="name">{{item.name}}</p>
+                                <p><span class="high">{{item.high | currency: 'E '}}</span> <span class="">{{item.price | currency: 'E '}}</span></p>
+                                <p>{{item.noOfSales}} Sales</p> <p class="sale-d">{{item.sale}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="divider-par">
+                    <h2>Why Shop With Us</h2>
+                    <div class="divider">
+                        <div>
+                            <p><i class="fa fa-headphones"></i> Online Support</p>
+                        </div>
+                        <div>
+                            <p><i class="fa fa-truck"></i> Free Delivery</p>
+                        </div>
+                        <div>
+                            <p><i class="fa fa-arrow-down"></i> Low Prices</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="item-2">
+                    <div class="item-min">
+                        <div class="img-item">
+                            <a href="./items/vitrap.html"><img src="./images/brands/vitra.jpg" alt="hay chair" class="item-2-img"></a>
+                            <div class="item-2-text">
+                                <p>Vitra Plywood chair</p>
+                                <p>E 800.00 <span class="high">E 900.00</span></p>
+                            </div>
+                        </div>
+                        <div class="img-item">
+                            <a href="./items/knollt.html"><img src="./images/brands/knoll.jpg" alt="knoll chair" class="item-2-img"></a>
+                            <div class="item-2-text">
+                                <p>Knoll Tulip chair</p>
+                                <p>E 1 500.00</p>
+                            </div>
+                        </div>
+                        <div class="img-item">
+                            <a href="./items/thonett.html"><img src="./images/brands/thonet.jpg" alt="knoll chair" class="item-2-img"></a>
+                            <div class="item-2-text">
+                                <p>Thonet TABLE Chair</p>
+                                <p>E 600.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/brands/sa.png" alt="" class="item-2-banner">
+                    </div>
+                    <div class="item-min1">
+                        <div class="img-item1">
+                            <div class="item-2-text">
+                                <p>Knoll Classic Chair</p>
+                                <p>E 1 000.00</p>
+                            </div>
+                            <a href="./items/knollc.html"><img src="./images/brands/knoll3.jpg" alt="hay chair" class="item-2-img"></a>
+                        </div>
+                        <div class="img-item1">
+                            <div class="item-2-text">
+                                <p>Thonet Bentwood</p>
+                                <p>E 500.00</p>
+                            </div>
+                            <a href="./items/thonetb.html"><img src="./images/brands/thonet3.jpg" alt="hay chair" class="item-2-img"></a>
+                        </div>
+                        <div class="img-item1">
+                            <div class="item-2-text">
+                                <p>Vitra Phantom Chair</p>
+                                <p>E 1 500.00 <span class="high">E 1 600.00</span></p>
+                            </div>
+                            <a href="./items/vitrap1.html"><img src="./images/brands/Vitra2.jpg" alt="hay chair" class="item-2-img"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <br>
+        <footer>
+            <div class="footer1">
+                <div class="footer1-c1">
+                    <h1>Sponsors</h1>
+                </div>
+                <div class="footer1-c">
+                    <a href="https://hay.dk/it" target="_blank"><img src="./images/brands/hayLogo.png" alt="Hay Logo" class="brandLogo"></a>
+                    <a href="https://www.thonet.de/en" target="_blank"><img src="./images/brands/thonet-logo.jpg" alt="Thonet Logo" class="brandLogo"></a>
+                    <a href="https://www.knoll.com/" target="_blank"><img src="./images/brands/knolllo.jpg" alt="Knoll Logo" class="brandLogo"></a>
+                    <a href="https://www.vitra.com/en-lp/home" target="_blank"><img src="./images/brands/vitraLogo.png" alt="Vitra logo" class="brandLogo"></a>
+                </div>
+            </div>
+
+                <div class="footer-distributed">
+
+                    <div class="footer-right">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com/share" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" title="Share on Instagram"><i class="fa fa-instagram"></i></a>
+                    </div>
+
+                    <div class="footer-left">
+                        <p class="footer-links">
+                            <a href="#" style="text-decoration: underline;">Home</a>
+                            <a href="./all.html">Shop</a>
+                            <a href="./about.html">About</a>
+                            <a href="./faq.html">Faq</a>
+                            <a href="./contact.html">Contact</a>
+                        </p>
+                        <p>Durable Furnitures &copy; 2022</p>
+                    </div>
+
+                </div>
+            </footer>
+    </div>
+
+    <script src="./app/app.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
